@@ -5,3 +5,7 @@
 *.fls
 *.log
 *.out
+
+# common vim swap files
+*.swp
+*.swo
