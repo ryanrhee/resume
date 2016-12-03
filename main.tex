@@ -9,8 +9,10 @@
 \usepackage{hyperref}
 \usepackage{paralist}
 \usepackage{etoolbox}
+\usepackage{multicol}
 
 \setlength{\parindent}{0pt} 
+\setlength\multicolsep{0pt}
 %Change the margins to fit your CV/resume content
 \usepackage[left=1in, right=1in, bottom=1.25in, top=1.25in]{geometry}
 
@@ -70,6 +72,25 @@
   (650) 862-7436
 \end{center}
 \vspace{-2ex}
+
+% Summary
+
+\Heading{Skill Summary}
+\SubHeading{Full-stack engineer}{with experience in:}
+\begin{multicols}{3}
+\small
+\begin{compactitem}
+  \item native iOS
+  \item JS/ES7/flow/React
+  \item python/tornado web server
+  \item php/hack web server
+  \item nodejs/express web server
+  \item host management (ruby/chef)
+  \item WebRTC A/V streaming
+  \item disassembly/reverse-eng
+\end{compactitem}
+\normalsize
+\end{multicols}
 
 % Work Exp
 
