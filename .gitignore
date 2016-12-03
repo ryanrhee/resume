@@ -1,0 +1,7 @@
+# latexmk generated files
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.out
