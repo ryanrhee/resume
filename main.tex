@@ -1,0 +1,188 @@
+%%
+%% Preamble
+%%
+
+%Change the font size of your document - 10pt, 12.1pt, etc.
+\documentclass[letterpaper,11pt,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{paralist}
+\usepackage{etoolbox}
+
+\setlength{\parindent}{0pt} 
+%Change the margins to fit your CV/resume content
+\usepackage[left=1in, right=1in, bottom=1.25in, top=1.25in]{geometry}
+
+% Hyperlink commands
+\newcommand{\Github}[2][]{
+  \href
+  {https://github.com/\ifstrempty{#1}{}{#1/}#2}
+  {#2}
+}
+\newcommand{\Gmail}[1]{
+  \href{mailto:#1@gmail.com}{#1@gmail.com}
+}
+
+% Stuff
+\newcommand{\Heading}[1]{
+  \vspace{2ex}
+  {\Large{#1}} \\
+  \vspace{-2ex}
+  \hrule
+  \vspace{2ex}
+}
+
+\newcommand{\LeftRight}[3][\normalfont]{{#1{#2}\hfill#3}}
+
+\newcommand{\SubHeading}[2]{{\textbf{#1}, #2}}
+
+\newenvironment{Role}[3]
+{
+  \LeftRight[\emph]{#1}{#2 --- #3}
+  \begin{compactitem}
+}
+{
+  \end{compactitem}
+}
+
+
+%Changes the page numbers:
+%{arabic}=arabic numerals,
+%{gobble}=no page numbers,
+%{roman}=Roman numerals
+\pagenumbering{gobble}
+
+%%
+%% Document
+%%
+
+\begin{document}
+
+% Name & Contact
+
+\begin{center}
+  \LARGE
+  \textbf{Ryan Rhee} \\
+  \normalsize
+  \Gmail{ryan.y.rhee} \\
+  Github: \Github{ryanrhee} \\
+  (650) 862-7436
+\end{center}
+\vspace{-2ex}
+
+% Work Exp
+
+\Heading{Experience}
+
+\SubHeading{Facebook, Inc}{New York, NY} \\
+\begin{Role}
+{Senior Software Engineer}
+{July 2016}{Present}
+  \item Data-layer APIs for ComponentKit, borrowing from Flux architecture
+  \item Static analysis to surface best-practices infractions at code-review
+    time, shifted engineering culture for Facebook's iOS codebase
+  \item UI library facilitating client-side call-to-actions in Facebook for iOS
+\end{Role}
+\begin{Role}
+{Software Engineer / Tech Lead}
+{June 2015}{July 2016}
+  \item People-managerial duties, including bi-weekly 1:1s in lieu of e-manager
+  \item Hybrid client-server routing layer, mixing real-time, ad-hoc, high-pri
+    (human) and scheduled, low-pri (continuous integration machine) clients
+\end{Role}
+\SubHeading{Facebook, Inc.}{Menlo Park, CA} \\
+\begin{Role}
+{Software Engineer}
+{July 2013}{June 2015}
+  \item Interactive JS web client for project Holodeck
+  \item Mobile app artifact \& metadata system, with automatic writes from CI +
+    on-demand reads from cold storage
+  \item First internal prototype that later to became project Holodeck
+  \item Maintainer of \Github[facebook]{xctool}
+\end{Role}
+\SubHeading{Rockwell Collins, Inc.}{Houston, TX} \\
+\begin{Role}
+{Software Engineering / Project Management Intern}
+{January 2008}{December 2012}
+  \item Client-server architecture for parts of iPad app ("FlightManager");
+    coding, UML diagrams, scm branching/merging policy, release coordination.
+    \emph{College}
+  \item Aviation-specific weather overlay on map on iPad app, used by pilots
+    \emph{College}
+  \item Lightning strike notification system, ingesting NOAA's real-time global
+    data; optimization via reducing frequency of geospatial distance
+    calculations; time complexity from quadratic to quasilinear (n log n)
+    \emph{College, 1st Year}
+  \item SOAP Web Services, site scrapers, MS SQL \emph{Highschool}
+\end{Role}
+
+% Education
+
+\Heading{Education}
+
+\LeftRight
+  {\SubHeading{The University of Texas at Austin}{Austin, TX}}
+  {May 2013} \\
+\textbf{Bachelor of Science in Computer Science}
+\begin{compactitem}
+  \item GPA 3.78
+  \item College Scholar (Awarded to Top 20\%)
+\end{compactitem}
+
+\noindent \begin{tabular}{@{} l l}
+ \Large{Education}    & \textbf{Most Recent University} \\
+     & Ph.D., Economics, 2015. \\
+     & Fields: International Trade, Monetary Economics, Development \\
+     & M.A., Political Science, 2013. \\
+     & \\
+     & \textbf{University of Illinois Champaign-Urbana} \\
+     & B.A., Economics, 2005. \\
+     & \\
+ \Large{Dissertation}    & ``Title of Dissertation" \\
+    & \parbox{5.0in}{Short description/summary of research and estimation techniques. This can be several lines long because of the paragraph box.}\\
+    & \\
+ \Large{Research}    & \textbf{Department, University} \\
+     & Postdoctoral Research Associate \\
+     & Project: Title of Research \\
+     & \\
+  \Large{Teaching}   & \textbf{Department, University} \\
+     & Instructor, Fundamentals of the Global Economy, 2016 \\
+     & \\
+     &\textbf{Department, University} \\
+     & Job Title, Course Name, 2014-2015 \\
+     & Job Title, Course Name, 2012-2014 \\
+     & \\
+     & \textbf{Department, University} \\
+     & Job Title, Course Name, 2013 \\
+     & Job Title, Course Name, 2013 \\
+     & \\
+ \Large{Awards and }    & \textbf{Graduate Student Teacher of the Year, Department} \\
+  \Large{Fellowships}   & Course Name, 2014-2015 \\
+     & \\
+     & \textbf{Fulbright Scholarship} \\
+     & City, Country, 2006-2009 \\
+     & \\
+  \Large{Languages}   & English (native), German (advanced) \\
+\Large{and Skills}    & Stata, \LaTeX, Eviews, Mathematica  \\
+\end{tabular}
+
+\newpage
+
+%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%
+% The reference section has links to your references' websites and email addresses.
+
+\noindent \begin{tabular}{@{} l l l}
+ \Large{References} & \href{http://www.professorone.com}{Professor One} & \href{http://www.professortwo.com}{Professor Two} \\
+ & Department Name &  Department Name  \\
+ & University Name &  University Name \\
+ & \small{\href{mailto:prof1@email.com}{prof1@email.com},+1\,(123)\,456-7899} & \small{\href{mailto:prof2@email.com}{prof2@email.com},+1\,(987)\,654-3210} \\
+&& \\
+ & \href{http://www.professorthree.com}{Professor Three} & \href{http://www.professorfour.com}{Professor Four}  \\
+ & Department Name &  Department Name \\
+ & University Name &  University Name \\
+ & \small{\href{mailto:prof3@email.com}{prof3@email.com},+1\,(123)\,789-1011} & \small{\href{mailto:prof4@email.com}{prof4@email.com},+1\,(789)\,456-9879} \\
+\end{tabular}
+
+\end{document}
+
