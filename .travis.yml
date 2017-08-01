@@ -1,9 +1,9 @@
 before_install:
-- sudo apt-get update
-- sudo apt-get install texlive-latex-extra
+  - sudo apt-get update
+  - sudo apt-get install texlive-latex-extra
 script:
-- mkdir pdflatex-out
-- bash -x bin/build.sh
+  - mkdir pdflatex-out
+  - bash -x bin/build.sh
 deploy:
   provider: releases
   api_key:
