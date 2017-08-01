@@ -11,6 +11,7 @@
 \usepackage{etoolbox}
 \usepackage{multicol}
 \usepackage[autostyle, english = american]{csquotes}
+\usepackage{twoopt}
 \MakeOuterQuote{"}
 
 \setlength{\parindent}{0pt}
@@ -40,13 +41,13 @@
 
 \newcommand{\SubHeading}[3][\normalsize]{{#1\textbf{#2}}, #3}
 
-\newcommand{\LeftRight}[3][\normalfont]{{#1{#2}\hfill#3}}
+\newcommandtwoopt{\LeftRight}[4][\normalfont][\normalfont]{{#1{#3}\hfill#2{#4}}}
 
 \newcommand{\Job}[2]{\SubHeading[\Large]{#1}{#2}}
 
 \newenvironment{Role}[3]
 {
-  \LeftRight[\emph]{#1}{#2 --- #3}
+  \LeftRight[\emph][\emph]{#1}{#2 --- #3}
   \begin{compactitem}
 }
 {
