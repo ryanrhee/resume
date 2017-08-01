@@ -3,8 +3,7 @@ before_install:
 - sudo apt-get install texlive-latex-extra
 script:
 - mkdir pdflatex-out
-- pdflatex -output-directory pdflatex-out ./tex/main.tex
-- mv pdflatex-out/main.pdf pdflatex-out/RyanRhee_Resume.pdf
+- bash -x bin/build.sh
 deploy:
   provider: releases
   api_key:

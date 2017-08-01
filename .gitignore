@@ -1,10 +1,5 @@
-# latexmk generated files
-*.aux
-*.dvi
-*.fdb_latexmk
-*.fls
-*.log
-*.out
+# pdflatex output directory
+pdflatex-out
 
 # common vim swap files
 *.swp
