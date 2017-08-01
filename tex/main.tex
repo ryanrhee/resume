@@ -32,15 +32,17 @@
 % Hierarchy
 \newcommand{\Heading}[1]{
   \vspace{2ex}
-  {\Large#1} \\
+  \uppercase{#1} \\
   \vspace{-2ex}
   \hrule
   \vspace{2ex}
 }
 
+\newcommand{\SubHeading}[3][\normalsize]{{#1\textbf{#2}}, #3}
+
 \newcommand{\LeftRight}[3][\normalfont]{{#1{#2}\hfill#3}}
 
-\newcommand{\SubHeading}[2]{{\textbf{#1}, #2}}
+\newcommand{\Job}[2]{\SubHeading[\Large]{#1}{#2}}
 
 \newenvironment{Role}[3]
 {
@@ -99,7 +101,7 @@
 
 \Heading{Experience}
 
-\SubHeading{Facebook, Inc}{New York, NY} \\
+\Job{Facebook, Inc}{New York, NY} \\
 \begin{Role}
 {Senior Software Engineer}
 {July 2016}{Present}
@@ -122,7 +124,7 @@
     request-response style real-time, ad-hoc, high-pri (human) and worker-queue
     style scheduled, low-pri (CI machine) clients
 \end{Role}
-\SubHeading{Facebook, Inc.}{Menlo Park, CA} \\
+\Job{Facebook, Inc.}{Menlo Park, CA} \\
 \begin{Role}
 {Software Engineer}
 {July 2013}{June 2015}
@@ -141,7 +143,7 @@
   \item Maintained \Github[facebook]{xctool}, a popular open-source iOS build
     tool
 \end{Role}
-\SubHeading{Rockwell Collins, Inc.}{Houston, TX} \\
+\Job{Rockwell Collins, Inc.}{Houston, TX} \\
 \begin{Role}
 {Software Engineering / Project Management Intern}
 {January 2008}{December 2012}
