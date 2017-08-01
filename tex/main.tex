@@ -23,10 +23,10 @@
 \usepackage[left=0.75in, right=0.75in, bottom=0.5in, top=0.75in]{geometry}
 
 % Hyperlink
-\newcommand{\Github}[2][]{
-  \href
-  {https://github.com/\ifstrempty{#1}{}{#1/}#2}
-  {#2}
+\newcommand{\Github}[2][]{%
+  \href%
+  {https://github.com/\ifstrempty{#1}{}{#1/}#2}%
+  {#2}%
 }
 \newcommand{\Gmail}[1]{
   \href{mailto:#1@gmail.com}{#1@gmail.com}
