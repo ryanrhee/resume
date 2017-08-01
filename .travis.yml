@@ -4,3 +4,11 @@ before_install:
 script:
 - mkdir pdflatex-out
 - pdflatex -output-directory pdflatex-out ./tex/main.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: Va9nM/Iv/skUtH/MhS1o0VXqI3Fe9IXRCi1jSDK9WCiBnbgYq/27MiXG6TqF6Nj/l3WK0G7ez98pQ0H+HJO0ubkKX7uB70nlFxbV5Mg4/qn8r+vMwjC/EVF6pxyc8bwOS6CZ33wM5fKTtEYbCAvKxI7qnHGyt7yHASLFyubuF/UgkOSQC+eHbwzhUe+dJn5KCtRwg3a8IlDESK+8Sq3Z2Gv8mplInwIZsl9TZcLwh0QaVVLbihqu079b/C3rx08FZqFJWxqnjR/Z2isxcoRbdHO2xQEYDdV2uPNdnrVXjh5jYKBoBIuO1HLyCUnlvYSjZwQ5uGr/oZs9v/7FYkzfe2dsh96+dd6gpSqvtUqw+rR19anMQ2/+PLC1Ei6tD1zFZeYi7YAtdNT2ydEHFRtgqrU5+A6PwfBy72usCufJB9TFWbdLX3JDhqsbeZw5irXmYNSWiK7GbyB6Jswld/A2vJT0c3PQyskeuf0KGySYfnjNzTrkK7vG/2nfxlUHf6YVEQGlH/BqSVu3djaHfPwuwc6XjdSPPBVKVHcn5t772UDooF16iWkOQXO9gfCljXhN0cEEytP7o1eWSR/Jyg3jeXrC3UBlrVQxOokhyEdX0tQZI6RQUN9FUln9RjtR77zZdMVLUdc4wfDrqY48TntN73i1IvVrzqFw6bFph1NXYoE=
+  file: pdflatex-out/main.pdf
+  skip_cleanup: true
+  on:
+    repo: ryanrhee/resume
