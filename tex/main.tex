@@ -13,13 +13,13 @@
 \usepackage[autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
 
-\setlength{\parindent}{0pt} 
+\setlength{\parindent}{0pt}
 \setlength\multicolsep{0pt}
 
 % Margins
 \usepackage[left=0.75in, right=0.75in, bottom=0.5in, top=0.75in]{geometry}
 
-% Hyperlink commands
+% Hyperlink
 \newcommand{\Github}[2][]{
   \href
   {https://github.com/\ifstrempty{#1}{}{#1/}#2}
@@ -29,10 +29,10 @@
   \href{mailto:#1@gmail.com}{#1@gmail.com}
 }
 
-% Stuff
+% Hierarchy
 \newcommand{\Heading}[1]{
   \vspace{2ex}
-  {\Large{#1}} \\
+  {\Large#1} \\
   \vspace{-2ex}
   \hrule
   \vspace{2ex}
@@ -71,7 +71,7 @@
   \textbf{Ryan Rhee} \\
   \normalsize
   \Gmail{ryan.y.rhee} \\
-  Github: \Github{ryanrhee} \\
+  github.com/\Github{ryanrhee} \\
   (650) 862-7436
 \end{center}
 \vspace{-2ex}
@@ -83,13 +83,13 @@
 \begin{multicols}{3}
 \small
 \begin{compactitem}
-  \item native iOS
-  \item JS/ES7/flow/React
-  \item python/tornado web server
-  \item php/hack web server
-  \item nodejs/express web server
-  \item host management (ruby/chef)
-  \item WebRTC A/V streaming
+  \item iOS (Objective-C)
+  \item PHP/Hack
+  \item Python
+  \item OCaml
+  \item JavaScript (ES2016/React/Flow)
+  \item Ruby (Chef)
+  \item WebRTC
   \item disassembly/reverse-eng
 \end{compactitem}
 \normalsize
@@ -103,48 +103,59 @@
 \begin{Role}
 {Senior Software Engineer}
 {July 2016}{Present}
-  \item Data-layer APIs for ComponentKit, borrowing from Flux architecture
-  \item Static analysis to surface best-practices infractions at code-review
-    time, shifted engineering culture for Facebook's iOS codebase
-  \item UI library facilitating client-side call-to-actions in Facebook for iOS
+  \item Implemented framework best-practices as static analysis rules to
+    surface best-practices infractions at code-review time, brought systemic
+    change to Facebook's iOS engineering culture; has since expanded to include
+    all repositories at Facebook
+  \item Implemented UI library for client-side call-to-actions in the iOS
+    Facebook app
 \end{Role}
 \begin{Role}
 {Software Engineer / Tech Lead}
 {June 2015}{July 2016}
-  \item People-managerial duties, including bi-weekly 1:1s in lieu of e-manager
-  \item Hybrid client-server routing layer, mixing request-response style
-    real-time, ad-hoc, high-pri (human) and worker-queue style scheduled,
-    low-pri (CI machine) clients
+  \item Drove overall direction for project Holodeck, integrating with the
+    end-to-end tests team, horizontally scaling tests and improving runtime by
+    a factor of 3
+  \item Carried out people-managerial functions, including bi-weekly 1:1s with
+    team members in lieu of eng. manager
+  \item Implemented a hybrid client-server routing layer, mixing
+    request-response style real-time, ad-hoc, high-pri (human) and worker-queue
+    style scheduled, low-pri (CI machine) clients
 \end{Role}
 \SubHeading{Facebook, Inc.}{Menlo Park, CA} \\
 \begin{Role}
 {Software Engineer}
 {July 2013}{June 2015}
-  \item Automatic host configuration via chef, automatic canaries triggered by
-    continuous integration, single-command release process with rollback
-    capabilities, host health monitoring with automatic remediation
-  \item Interactive JS web client for project Holodeck, utilizing WebRTC
-    to stream the framebuffer, tightly integrated to Facebook infrastructure,
-    allowing auto-login on apps using Facebook-based authentication
-  \item Mobile app artifact \& metadata system, with automatic writes from CI +
-    on-demand reads from cold storage
-  \item First internal prototype that later to became project Holodeck
-  \item Maintainer of \Github[facebook]{xctool}
+  \item Implemented automatic host configuration via chef, automatic canaries
+    triggered by continuous integration, single-command release process with
+    rollback capabilities, and host health monitoring with automatic
+    remediation
+  \item Implemented an interactive JS web client for project Holodeck,
+    utilizing WebRTC to stream the framebuffer, tightly integrated to Facebook
+    infrastructure, allowing auto-login on apps using Facebook-based
+    authentication
+  \item Designed the mobile app artifact \& metadata system, with automatic
+    writes from CI + on-demand reads from cold storage
+  \item Implemented first internal prototype that later to became project
+    Holodeck
+  \item Maintained \Github[facebook]{xctool}, a popular open-source iOS build
+    tool
 \end{Role}
 \SubHeading{Rockwell Collins, Inc.}{Houston, TX} \\
 \begin{Role}
 {Software Engineering / Project Management Intern}
 {January 2008}{December 2012}
-  \item Client-server architecture for parts of iPad app ("FlightManager");
-    coding, UML diagrams, scm branching/merging policy, release coordination
-    \emph{(College)}
-  \item Aviation-specific weather overlay on map on iPad app, used by pilots
-    \emph{(College)}
-  \item Lightning strike notification system, ingesting NOAA's real-time global
-    data; optimization via reducing frequency of geospatial distance
-    calculations; time complexity from quadratic to quasilinear (n log n)
-    \emph{(College, 1st Year)}
-  \item SOAP web services, site scrapers, MS SQL \emph{(Highschool)}
+  \item Designed the client-server architecture for parts of iPad app
+    ("FlightManager"); coding, UML diagrams, scm branching/merging policy,
+    release coordination \emph{(College)}
+  \item Implemented aviation-specific weather overlay on map on iPad app, used
+    by pilots \emph{(College)}
+  \item Implemented a Lightning strike notification system, ingesting NOAA's
+    real-time global data; optimization via frequency reduction of geospatial
+    distance calculations; improved time complexity from quadratic to
+    quasilinear (n log n) \emph{(College, 1st Year)}
+  \item Implemented SOAP web services, site scrapers, using MS SQL
+    \emph{(Highschool)}
 \end{Role}
 
 % Education
@@ -157,7 +168,6 @@
 \textbf{Bachelor of Science in Computer Science}
 \begin{compactitem}
   \item GPA 3.78
-  \item College Scholar (Awarded to Top 20\%)
 \end{compactitem}
 
 \end{document}
