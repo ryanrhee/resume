@@ -4,6 +4,8 @@ before_install:
 script:
   - mkdir pdflatex-out
   - bash -x bin/build.sh
+before_deploy:
+  - export TRAVIS_TAG=build_${TRAVIS_BUILD_ID}
 deploy:
   provider: releases
   api_key:
@@ -12,3 +14,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: ryanrhee/resume
+    all_branches: true
+    tags: false # tags are only used for releasing builds
