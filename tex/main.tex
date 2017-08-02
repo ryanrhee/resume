@@ -3,7 +3,7 @@
 %%
 
 %Change the font size of your document - 10pt, 12.1pt, etc.
-\documentclass[letterpaper,11pt,oneside]{article}
+\documentclass[letterpaper,12pt,oneside]{article}
 \usepackage[svgnames]{xcolor}
 \definecolor{CustomBlue}{RGB}{59,89,152}
 \usepackage[colorlinks,urlcolor=CustomBlue]{hyperref}
@@ -46,7 +46,7 @@
 % Hierarchy
 \newcommand{\Heading}[1]{
   \vspace{2ex}
-  \large\textsc{#1} \\
+  {\large\textsc{#1}} \\
   \vspace{-2ex}
   \hrule
 }
@@ -103,7 +103,7 @@
   \Gmail{ryan.y.rhee}\\%
   (650) 862-7436
 }{%
-  \LARGE\textsc{Ryan Rhee}
+  \Huge\textsc{Ryan Rhee}
 }{%
   \GitHubUser{ryanrhee}\\%
   \LinkedIn{ryanrhee}%
@@ -126,7 +126,7 @@
     Facebook app
 \end{Role}
 \begin{Role}
-{Software Engineer, Tech Lead}
+{Software Eng. Tech Lead}
 {Facebook, Inc}
 {Jun 2015}{Jul 2016}
   \item Drove overall direction for project Holodeck, integrating with the
