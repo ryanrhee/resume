@@ -13,11 +13,15 @@
 \usepackage{etoolbox}
 \usepackage{multicol}
 \usepackage[autostyle, english = american]{csquotes}
+\usepackage[tracking=true]{microtype}
+% order matters here - make sure fontawesome is *after* microtype
 \usepackage{fontawesome}
 \MakeOuterQuote{"}
 
 \setlength{\parindent}{0pt}
 \setlength\multicolsep{0pt}
+
+\SetTracking[no ligatures = f]{encoding = *,shape = sc}{120}
 
 % Margins
 \usepackage[left=0.75in, right=0.75in, bottom=0.5in, top=0.75in]{geometry}
@@ -45,7 +49,7 @@
 % Hierarchy
 \newcommand{\Heading}[1]{
   \vspace{2ex}
-  \uppercase{#1} \\
+  \textsc{#1} \\
   \vspace{-2ex}
   \hrule
 }
@@ -102,7 +106,7 @@
   \Gmail{ryan.y.rhee}\\%
   (650) 862-7436
 }{%
-  \LARGE\textbf{Ryan Rhee}
+  \LARGE\textsc{Ryan Rhee}
 }{%
   \GitHubUser{ryanrhee}\\%
   \LinkedIn{ryanrhee}%
