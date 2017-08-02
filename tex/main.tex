@@ -14,6 +14,7 @@
 \usepackage{multicol}
 \usepackage[autostyle, english = american]{csquotes}
 \usepackage{twoopt}
+\usepackage{fontawesome}
 \MakeOuterQuote{"}
 
 \setlength{\parindent}{0pt}
@@ -23,11 +24,21 @@
 \usepackage[left=0.75in, right=0.75in, bottom=0.5in, top=0.75in]{geometry}
 
 % Hyperlink
-\newcommand{\Github}[2][]{%
+\newcommand{\GitHubRepo}[2]{%
   \href%
-  {https://github.com/\ifstrempty{#1}{}{#1/}#2}%
-  {#2}%
+  {https://github.com/#1/#2}%
+  {#2   \faGithubSign}%
 }
+\newcommand{\GitHubUser}[1]{%
+  \href%
+  {https://github.com/#1}%
+  {\faGithubSign/#1}%
+}
+\newcommand{\LinkedIn}[1]{%
+  \href%
+  {https://www.linkedin.com/in/#1}%
+  {\faLinkedinSign/#1}%
+}%
 \newcommand{\Gmail}[1]{
   \href{mailto:#1@gmail.com}{#1@gmail.com}
 }
@@ -44,6 +55,27 @@
 \newcommand{\SubHeading}[3][\normalsize]{{#1\textbf{#2}}, #3}
 
 \newcommandtwoopt{\LeftRight}[4][\normalfont][\normalfont]{{#1{#3}\hfill#2{#4}}}
+
+\newcommand{\OneThirdBox}[1]{%
+  \parbox{.333\textwidth}{#1}%
+}
+\newcommand{\LeftCenterRight}[3]{%
+  \OneThirdBox{
+    \begin{flushleft}%
+      #1%
+    \end{flushleft}%
+  }%
+  \OneThirdBox{
+    \begin{center}%
+      #2%
+    \end{center}%
+  }%
+  \OneThirdBox{
+    \begin{flushright}%
+      #3%
+    \end{flushright}%
+  }%
+}
 
 \newcommand{\Job}[2]{\SubHeading[\Large]{#1}{#2}}
 
@@ -71,15 +103,17 @@
 
 % Name & Contact
 
-\begin{center}
-  \LARGE
-  \textbf{Ryan Rhee} \\
-  \normalsize
-  \Gmail{ryan.y.rhee} \\
-  github.com/\Github{ryanrhee} \\
+\LeftCenterRight
+{%
+  \Gmail{ryan.y.rhee}\\%
   (650) 862-7436
-\end{center}
-\vspace{-2ex}
+}{%
+  \LARGE\textbf{Ryan Rhee}
+}{%
+  \GitHubUser{ryanrhee}\\%
+  \LinkedIn{ryanrhee}%
+}%
+%\vspace{-2ex}
 
 % Work Exp
 
@@ -124,7 +158,7 @@
     writes from CI + on-demand reads from cold storage
   \item Implemented first internal prototype that later to became project
     Holodeck
-  \item Maintained \Github[facebook]{xctool}, a popular open-source iOS build
+  \item Maintained \GitHubRepo{facebook}{xctool}, a popular open-source iOS build
     tool
 \end{Role}
 \Job{Rockwell Collins, Inc.}{Houston, TX} \\

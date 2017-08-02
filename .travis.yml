@@ -1,6 +1,6 @@
 before_install:
   - sudo apt-get update
-  - sudo apt-get install texlive-latex-extra
+  - sudo apt-get install texlive-xetex texlive-fonts-extra texlive-latex-extra
 script:
   - mkdir pdflatex-out
   - bash -x bin/build.sh
