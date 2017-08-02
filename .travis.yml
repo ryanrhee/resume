@@ -1,6 +1,7 @@
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install texlive-latex-extra
+  - sudo add-apt-repository ppa:jonathonf/texlive-2017 -y
+  - sudo apt-get update -q
+  - sudo apt-get install texlive-full -y
 script:
   - mkdir pdflatex-out
   - bash -x bin/build.sh
