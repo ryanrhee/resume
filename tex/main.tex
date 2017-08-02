@@ -13,7 +13,6 @@
 \usepackage{etoolbox}
 \usepackage{multicol}
 \usepackage[autostyle, english = american]{csquotes}
-\usepackage{twoopt}
 \usepackage{fontawesome}
 \MakeOuterQuote{"}
 
@@ -49,43 +48,38 @@
   \uppercase{#1} \\
   \vspace{-2ex}
   \hrule
-  \vspace{2ex}
 }
-
-\newcommand{\SubHeading}[3][\normalsize]{{#1\textbf{#2}}, #3}
-
-\newcommandtwoopt{\LeftRight}[4][\normalfont][\normalfont]{{#1{#3}\hfill#2{#4}}}
 
 \newcommand{\OneThirdBox}[1]{%
   \parbox{.333\textwidth}{#1}%
 }
-\newcommand{\LeftCenterRight}[3]{%
+\newcommand{\LeftCenterRight}[4][\normalfont]{%
   \OneThirdBox{
     \begin{flushleft}%
-      #1%
+      #1{#2}%
     \end{flushleft}%
   }%
   \OneThirdBox{
     \begin{center}%
-      #2%
+      #1{#3}%
     \end{center}%
   }%
   \OneThirdBox{
     \begin{flushright}%
-      #3%
+      #1{#4}%
     \end{flushright}%
   }%
 }
 
-\newcommand{\Job}[2]{\SubHeading[\Large]{#1}{#2}}
-
-\newenvironment{Role}[3]
+\newenvironment{Role}[4]
 {
-  \LeftRight[\emph][\emph]{#1}{#2 --- #3}
+  \LeftCenterRight[\textbf]{#1}{#2}{#3 --- #4}
   \begin{compactitem}
+  \vspace{-2ex}
 }
 {
   \end{compactitem}
+  \vspace{-1ex}
 }
 
 
@@ -113,16 +107,16 @@
   \GitHubUser{ryanrhee}\\%
   \LinkedIn{ryanrhee}%
 }%
-%\vspace{-2ex}
+\vspace{-2ex}
 
 % Work Exp
 
-\Heading{Experience}
+\Heading{Employment}
 
-\Job{Facebook, Inc}{New York, NY} \\
 \begin{Role}
 {Senior Software Engineer}
-{July 2016}{Present}
+{Facebook, Inc}
+{Jul 2016}{Present}
   \item Implemented framework best-practices as static analysis rules to
     surface best-practices infractions at code-review time, brought systemic
     change to Facebook's iOS engineering culture; has since expanded to include
@@ -131,8 +125,9 @@
     Facebook app
 \end{Role}
 \begin{Role}
-{Software Engineer / Tech Lead}
-{June 2015}{July 2016}
+{Software Engineer, Tech Lead}
+{Facebook, Inc}
+{Jun 2015}{Jul 2016}
   \item Drove overall direction for project Holodeck, integrating with the
     end-to-end tests team, horizontally scaling tests and improving runtime by
     a factor of 3
@@ -142,10 +137,10 @@
     request-response style real-time, ad-hoc, high-pri (human) and worker-queue
     style scheduled, low-pri (CI machine) clients
 \end{Role}
-\Job{Facebook, Inc.}{Menlo Park, CA} \\
 \begin{Role}
 {Software Engineer}
-{July 2013}{June 2015}
+{Facebook, Inc.}
+{Jul 2013}{Jun 2015}
   \item Implemented automatic host configuration via chef, automatic canaries
     triggered by continuous integration, single-command release process with
     rollback capabilities, and host health monitoring with automatic
@@ -161,10 +156,10 @@
   \item Maintained \GitHubRepo{facebook}{xctool}, a popular open-source iOS build
     tool
 \end{Role}
-\Job{Rockwell Collins, Inc.}{Houston, TX} \\
 \begin{Role}
-{Software Engineering / Project Management Intern}
-{January 2008}{December 2012}
+{Software Engineering Intern}
+{Rockwell Collins, Inc.}
+{Jan 2008}{Dec 2012}
   \item Designed the client-server architecture for parts of iPad app
     ("FlightManager"); coding, UML diagrams, scm branching/merging policy,
     release coordination \emph{(College)}
@@ -181,7 +176,7 @@
 % Skills
 
 \Heading{Skills}
-\SubHeading{Full-stack engineer}{with experience in:}
+\vspace{2ex}
 \begin{multicols}{3}
 \small
 \begin{compactitem}
@@ -189,7 +184,7 @@
   \item PHP/Hack
   \item Python
   \item OCaml
-  \item JavaScript (ES2016/React/Flow)
+  \item JavaScript ES6/React/Flow
   \item Ruby (Chef)
   \item WebRTC
   \item disassembly/reverse-eng
@@ -201,13 +196,14 @@
 
 \Heading{Education}
 
-\LeftRight
-  {\SubHeading{The University of Texas at Austin}{Austin, TX}}
-  {May 2013} \\
-\textbf{Bachelor of Science in Computer Science}
-\begin{compactitem}
-  \item GPA 3.78
-\end{compactitem}
+\begin{Role}
+  {Austin, TX}
+  {The University of Texas}
+  {Aug 2009}
+  {May 2013}
+  \item Bachelor of Science in Computer Science, GPA 3.78
+  \item Graduated with Honors
+\end{Role}
 
 \end{document}
 
