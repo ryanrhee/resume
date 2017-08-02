@@ -4,19 +4,16 @@
 
 %Change the font size of your document - 10pt, 12.1pt, etc.
 \documentclass[letterpaper,11pt,oneside]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{setspace}
 \usepackage[svgnames]{xcolor}
 \definecolor{CustomBlue}{RGB}{59,89,152}
 \usepackage[colorlinks,urlcolor=CustomBlue]{hyperref}
-\usepackage{paralist}
-\usepackage{etoolbox}
+\usepackage{paralist}  % for compact list
 \usepackage{multicol}
 \usepackage[autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
 \usepackage[tracking=true]{microtype}
 % order matters here - make sure fontawesome is *after* microtype
 \usepackage{fontawesome}
-\MakeOuterQuote{"}
 
 \setlength{\parindent}{0pt}
 \setlength\multicolsep{0pt}
@@ -49,7 +46,7 @@
 % Hierarchy
 \newcommand{\Heading}[1]{
   \vspace{2ex}
-  \textsc{#1} \\
+  \large\textsc{#1} \\
   \vspace{-2ex}
   \hrule
 }
