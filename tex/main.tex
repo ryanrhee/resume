@@ -23,21 +23,36 @@
 % Margins
 \usepackage[left=0.75in, right=0.75in, bottom=0.5in, top=0.75in]{geometry}
 
+% FontAwesome Version-Agnostic
+\makeatletter
+\@ifpackagelater{fontawesome}{2013/12/31}{%
+  % Newer package
+  \newcommand\GitHubLogo{\faGithubSquare}%
+  \newcommand\LinkedInLogo{\faLinkedinSquare}%
+}{%
+  % Older package
+  \newcommand\GitHubLogo{\faGithubSign}%
+  \newcommand\LinkedInLogo{\faLinkedinSign}%
+}
+\makeatother
+
 % Hyperlink
 \newcommand{\GitHubRepo}[2]{%
-  \href%
-  {https://github.com/#1/#2}%
-  {#2   \faGithubSign}%
+  \lowercase{%
+    \href%
+    {https://github.com/#1/#2}%
+  }%
+  {#2 \GitHubLogo}%
 }
 \newcommand{\GitHubUser}[1]{%
   \href%
   {https://github.com/#1}%
-  {\faGithubSign/#1}%
+  {\GitHubLogo/#1}%
 }
 \newcommand{\LinkedIn}[1]{%
   \href%
   {https://www.linkedin.com/in/#1}%
-  {\faLinkedinSign/#1}%
+  {\LinkedInLogo/#1}%
 }%
 \newcommand{\Gmail}[1]{
   \href{mailto:#1@gmail.com}{#1@gmail.com}
