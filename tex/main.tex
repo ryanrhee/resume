@@ -54,12 +54,12 @@
   {https://www.linkedin.com/in/#1}%
   {\LinkedInLogo/#1}%
 }%
-\newcommand{\Gmail}[1]{
+\newcommand{\Gmail}[1]{%
   \href{mailto:#1@gmail.com}{#1@gmail.com}
 }
 
 % Hierarchy
-\newcommand{\Heading}[1]{
+\newcommand{\Heading}[1]{%
   \vspace{2ex}
   {\large\textsc{#1}} \\
   \vspace{-2ex}
@@ -70,17 +70,17 @@
   \parbox{.333\textwidth}{#1}%
 }
 \newcommand{\LeftCenterRight}[4][\normalfont]{%
-  \OneThirdBox{
+  \OneThirdBox{%
     \begin{flushleft}%
       #1{#2}%
     \end{flushleft}%
   }%
-  \OneThirdBox{
+  \OneThirdBox{%
     \begin{center}%
       #1{#3}%
     \end{center}%
   }%
-  \OneThirdBox{
+  \OneThirdBox{%
     \begin{flushright}%
       #1{#4}%
     \end{flushright}%
