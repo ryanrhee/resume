@@ -2,8 +2,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install texlive-xetex texlive-fonts-extra texlive-latex-extra
 script:
-  - mkdir pdflatex-out
-  - bash -x bin/build.sh
+  - make build
 before_deploy:
   - export TRAVIS_TAG=build_${TRAVIS_BUILD_ID}
 deploy:
